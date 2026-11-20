@@ -61,7 +61,7 @@ class FullPlayerScreen extends StatelessWidget {
             _Seek(p: p, fallback: Duration(seconds: t.duration)),
             const SizedBox(height: 4),
             if (p.error != null) Text(p.error!, style: const TextStyle(color: Colors.redAccent)),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Directionality(textDirection: TextDirection.ltr, child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               IconButton(iconSize: 44, onPressed: p.previous, icon: const Icon(Icons.skip_previous_rounded)),
               const SizedBox(width: 12),
               p.buffering
@@ -74,7 +74,7 @@ class FullPlayerScreen extends StatelessWidget {
                     ),
               const SizedBox(width: 12),
               IconButton(iconSize: 44, onPressed: p.next, icon: const Icon(Icons.skip_next_rounded)),
-            ]),
+            ])),
             const Spacer(),
           ]),
         ),

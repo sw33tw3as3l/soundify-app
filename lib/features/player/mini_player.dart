@@ -44,6 +44,9 @@ class MiniPlayer extends StatelessWidget {
                   Text(t.artist, maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(color: Colors.white60, fontSize: 12)),
                 ]),
               ),
+              Directionality(
+                textDirection: TextDirection.ltr,
+                child: Row(mainAxisSize: MainAxisSize.min, children: [
               IconButton(onPressed: p.previous, icon: const Icon(Icons.skip_previous_rounded)),
               p.buffering
                   ? const Padding(padding: EdgeInsets.all(12), child: SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2.5)))
@@ -52,6 +55,8 @@ class MiniPlayer extends StatelessWidget {
                       icon: Icon(p.playing ? Icons.pause_circle_filled_rounded : Icons.play_circle_fill_rounded, size: 38, color: kAccent),
                     ),
               IconButton(onPressed: p.next, icon: const Icon(Icons.skip_next_rounded)),
+                ]),
+              ),
             ]),
           ),
         ]),
